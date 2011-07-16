@@ -1,0 +1,34 @@
+.header {
+background-color: black;
+text-align:right;
+color: white;
+font-size: 24pt;
+padding: 5px;
+border-bottom: 1px solid #000;
+}
+
+
+#tab
+{
+font-family:"Calibri";
+width:100%;
+border-collapse:collapse;
+}
+#tab td
+{
+font-size:14px;
+border:1px solid ;
+padding:3px 7px 2px 7px;
+}
+#tab th 
+{
+font-size:15px;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:gray;
+color:white;
+}
+.footer, .push {
+height: 4em;
+}

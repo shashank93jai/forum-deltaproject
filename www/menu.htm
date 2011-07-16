@@ -1,0 +1,108 @@
+<html>
+<style type="text/css">
+body {font-family:arial; font-size:11px;}
+
+     
+   
+    #nav li {
+        float:left;
+        display:block;
+        width:100px;
+        background:black;
+        position:relative;
+        z-index:500;
+        margin:0 1px;
+    }
+         
+    
+    #nav li a {
+        display:block;
+        padding:8px 5px 0 5px;
+        font-weight:700; 
+        height:28px;
+        text-decoration:none;
+        color:#fff;
+        text-align:center;
+        color:white;
+    }
+ 
+    
+   
+        #nav ul {
+            position:absolute;
+            left:0;
+            display:none;
+            margin:0 0 0 -1px;
+            padding:0;
+            list-style:none;
+        }
+         
+        #nav ul li {
+            width:100px;
+            float:left;
+            border-top:1px solid white;
+        }
+         
+        
+        #nav ul a {
+            display:block; 
+            height:18px;
+            padding: 8px 5px;
+            color:white;
+	    
+        }
+         
+       
+</style>
+ <script type="text/javascript" src="jquery.js"></script>          
+ <script type="text/javascript"> 
+$(document).ready(function () {
+     
+    $('#nav li').hover(
+        function () {
+            $('ul', this).fadeIn(200);
+ 
+        },
+        function () {
+            
+            $('ul', this).fadeOut(200);        
+        }
+    );
+     
+});
+</script>
+</head>
+<body>
+
+
+<ul id="nav">
+    <li><a href="about.php">About</a></li>
+    <li><a href="#">Forum</a>
+        <ul>
+            <li><a href="all-threads.php">View Threads</a></li>
+            <li><a href="create-thread.php">Create Thread</a></li>
+            
+        </ul>
+        
+    </li> 
+    <li><a href="#">Profiles</a>
+	<ul>
+	   <li><a href="my-profile.php">My profile</a></li>
+	   <li><a href="members.php">Member List</a></li>
+	   <li><a href="edit-profile.php">Edit Profile</a></li>
+	   </ul>
+	</li> 			 	
+    <li><a href="#">Private Messaging</a>
+    <ul>
+        <li><a href="inbox.php">Inbox</a></li>
+        <li><a href="create-message.php">Create Message</a></li>
+        <li><a href="sent-messages.php">Sent messages</a></li>
+        
+    </ul>        
+    </li>
+    <li><a href="contact.php">Contact Us</a></li>
+    <li><a href="logout.php"><logout>Logout</a></li>
+</ul>
+ 
+</body>
+</html>
