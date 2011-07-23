@@ -15,7 +15,7 @@
 	$login=$_SESSION['SESS_LOGIN'];
 
 	$sql = "SELECT * FROM recdmsgs WHERE to_user='$login' ORDER BY message_id DESC" or die(mysql_error());
-
+?></br></br></br></br></br></br></br><?php
 	$result=mysql_query($sql);
 	if($result)
 	{

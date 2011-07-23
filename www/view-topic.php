@@ -19,21 +19,14 @@
 </br></br></br></br></br></br></br></br></br>
 <table id="tab" border="1" align="center" cellpadding="3" cellspacing="1" >
 <tr>
-<th align="center">#</th>
-<th align="center">Name</th>
-<th  align="center">Subject</th>
-
-<th  align="center">Message</th>
-<th  align="center">Date time</th>
+<td colspan="2" bgcolor="gray"><pre><? echo $rows['subject']; ?>  <? echo $rows['datetime']; ?></td>
 </tr>
 <tr>
-<td><? echo $rows['id']; ?></td>
-<td><? echo $rows['name']; ?></td>
-<td><? echo $rows['subject']; ?></td>
+<td width="200"><? echo $rows['name']; ?></td>
 <td><? echo $rows['message']; ?></td>
-<td align="center"><? echo $rows['datetime']; ?></td>
+
 </tr>
-</table></br>
+</table></br></br>
 
 
 <?php
@@ -41,35 +34,28 @@
 
 	$result=mysql_query($sql);
 ?>
-<table id="tab" border="1" align="center" cellpadding="3" cellspacing="1" >
-<tr>
-
-<th  align="center">Name</th>
-<th align="center">Answer</th>
-<th  align="center">Date time</th>
-<th align="center">likes</th>
-<th align="center">dislikes</th>
-</tr>
+<h>Answers:</h>
 
 <?php
 	while($rows=mysql_fetch_array($result))
 	{
-?>
+?>	<table id="tab" border="1" align="center" cellpadding="3" cellspacing="1" >
 	<tr>
-	<td><? echo $rows['name']; ?></br><a href="like.php?answerid=<? echo $rows['answerid']; ?>">Like this post</a></br><a href="dislike.php?answerid=<? echo $rows['answerid']; ?>">DisLike this post</a></td>
-	
-	<td><? echo $rows['answer']; ?></td>
-	<td><? echo $rows['datetime']; ?></td>
-	<td><? echo $rows['likes']; ?></td>
-	<td><? echo $rows['dislikes']; ?></td>
+	<td colspan="2" bgcolor="gray"><pre><? echo $rows['datetime']; ?>   <? echo $rows['likes']; ?> Likes   <? echo $rows['dislikes']; ?> Dislikes</pre></td>
 	</tr>
-
+	
+	<tr>
+	<td width="200"><pre><? echo $rows['name']; ?></br><a href="like.php?answerid=<? echo $rows['answerid']; ?>&qid=<?echo $rows['id']; ?>"><img src="images/like.jpg" alt="like" width="70"/></a>  <a href="dislike.php?answerid=<? echo $rows['answerid']; ?>&qid=<?echo $rows['id']; ?>"><img src="images/dislike.jpg" width="90" height="30"/></a></pre></td>
+	<td><? echo $rows['answer']; ?></td>
+	</tr>
+	</table>
+	</br>
 
 <?php
 	}
 mysql_close();
 ?>
-</table>
+
 </br>
 
 <p>Create a reply to this thread</p>

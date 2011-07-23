@@ -9,10 +9,10 @@
 	include("menu.htm"); 
 	require_once('auth.php');
  	include("config.php");
-	
+	$qid=$_GET['qid'];
 	$id=$_GET['answerid'];
 	$sql=mysql_query("UPDATE answers SET dislikes=dislikes+1 WHERE answerid=$id");
-	header("location: all-threads.php");
+	header("location: view-topic.php?id=$qid");
 ?>
 </body>
 </html>
